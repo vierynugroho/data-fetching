@@ -1,9 +1,9 @@
 export async function updateUserPlaces(places) {
 	let response = await fetch('http://localhost:3000/user-places', {
 		method: 'PUT',
-		body: JSON.stringify(places),
+		body: JSON.stringify({ places }),
 		header: {
-			'content-type': 'application/json',
+			'Content-type': 'application/json',
 		},
 	});
 
