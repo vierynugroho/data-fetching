@@ -23,7 +23,7 @@ function App() {
 		setModalIsOpen(false);
 	}
 
-	function handleSelectPlace(selectedPlace) {
+	async function handleSelectPlace(selectedPlace) {
 		setUserPlaces((prevPickedPlaces) => {
 			if (!prevPickedPlaces) {
 				prevPickedPlaces = [];
@@ -40,7 +40,7 @@ function App() {
 	const handleRemovePlace = useCallback(async function handleRemovePlace() {
 		setUserPlaces((prevPickedPlaces) => prevPickedPlaces.filter((place) => place.id !== selectedPlace.current.id));
 
-		setModalIsOpen(false);
+		await setModalIsOpen(false);
 	}, []);
 
 	return (
